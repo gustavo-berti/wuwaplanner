@@ -1,4 +1,4 @@
-package com.wuwaplanner.controller;
+package com.wuwaplanner.repository;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
