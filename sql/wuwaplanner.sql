@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 23-Ago-2024 às 16:37
+-- Tempo de geração: 26-Ago-2024 às 22:54
 -- Versão do servidor: 10.4.24-MariaDB
 -- versão do PHP: 8.1.6
 
@@ -179,11 +179,13 @@ INSERT INTO `characters_resources` (`id_character`, `id_resource`) VALUES
 (20, 19),
 (20, 26),
 (20, 33),
+(21, 34),
 (22, 3),
 (22, 12),
 (22, 18),
 (22, 19),
 (22, 30),
+(23, 34),
 (24, 8),
 (24, 10),
 (24, 16),
@@ -260,7 +262,8 @@ INSERT INTO `resource` (`id_resource`, `name`, `id_type`) VALUES
 (30, 'Violet', 5),
 (31, 'Pavo', 5),
 (32, 'Pearl', 5),
-(33, 'Mysterious', 1);
+(33, 'Mysterious', 1),
+(34, 'Undefined', 1);
 
 -- --------------------------------------------------------
 
@@ -561,7 +564,7 @@ ALTER TABLE `rarities`
 -- AUTO_INCREMENT de tabela `resource`
 --
 ALTER TABLE `resource`
-  MODIFY `id_resource` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `id_resource` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT de tabela `types`
