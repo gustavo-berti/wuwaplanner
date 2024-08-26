@@ -6,7 +6,7 @@ import com.wuwaplanner.model.*;
 import java.sql.Connection;
 import java.sql.ResultSet;
 
-public class PullDatabase {
+public class ResourceRepository {
 
     public static HashMap<Integer, Object> GetResources() {
         Connection conn = MySQLConnection.getConnection();
