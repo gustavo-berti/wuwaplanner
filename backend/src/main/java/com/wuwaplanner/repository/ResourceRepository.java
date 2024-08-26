@@ -8,7 +8,7 @@ import java.sql.ResultSet;
 
 public class ResourceRepository {
 
-    public static HashMap<Integer, Object> GetResources() {
+    public static void getResources() {
         Connection conn = MySQLConnection.getConnection();
         HashMap<Integer, Object> resources = new HashMap<>();
         if (conn != null) {
@@ -27,6 +27,5 @@ public class ResourceRepository {
                 MySQLConnection.closeConnection(conn);
             }
         }
-        return resources;
     }
 }

@@ -7,7 +7,7 @@ import com.wuwaplanner.cache.CacheManager;
 import com.wuwaplanner.model.Weapon;
 
 public class WeaponRepository {
-    public static void GetWeapons() {
+    public static void getWeapons() {
         Connection conn = MySQLConnection.getConnection();
         if (conn != null) {
             try {

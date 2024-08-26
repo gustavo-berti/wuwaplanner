@@ -7,7 +7,7 @@ import com.wuwaplanner.cache.CacheManager;
 import com.wuwaplanner.model.Character;
 
 public class CharacterRepository {
-    public static void GetCharacters() {
+    public static void getCharacters() {
         Connection conn = MySQLConnection.getConnection();
         if (conn != null) {
             try {
