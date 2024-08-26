@@ -3,13 +3,12 @@ package com.wuwaplanner.repository;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
-import java.util.HashMap;
+import com.wuwaplanner.cache.CacheManager;
 import com.wuwaplanner.model.Character;
 
 public class CharacterRepository {
-    public static HashMap<Integer, Character> GetCharacters() {
+    public static void GetCharacters() {
         Connection conn = MySQLConnection.getConnection();
-        HashMap<Integer, Character> characters = new HashMap<Integer, Character>();
         if (conn != null) {
             try {
                 Statement smt = conn.createStatement();
@@ -22,28 +21,28 @@ public class CharacterRepository {
                                 "ORDER BY c.name, t.id_types");
                 while (rs.next()) {
                     Character Char = new Character(rs.getString("c.name"), rs.getString("ra.name"));
-                    if (characters.containsKey(rs.getInt("c.id_character")))
-                        Char = characters.get(rs.getInt("c.id_character"));
+                    if (CacheManager.getCharacter(rs.getInt("c.id_character"))!=null)
+                        Char = CacheManager.getCharacter(rs.getInt("c.id_character"));
                     switch (rs.getString("t.name")) {
                         case "boss":
                             Char.setBoss(rs.getString("re.name"));
-                            characters.put(rs.getInt("c.id_character"), Char);
+                            CacheManager.addCharacter(rs.getInt("c.id_character"), Char);
                             break;
                         case "weakly boss":
-                            Char.setWeaklyBoss(rs.getString("re.name"));
-                            characters.put(rs.getInt("c.id_character"), Char);
+                            Char.setBoss(rs.getString("re.name"));
+                            CacheManager.addCharacter(rs.getInt("c.id_character"), Char);
                             break;
                         case "farm":
                             Char.setMaterialFarm(rs.getString("re.name"));
-                            characters.put(rs.getInt("c.id_character"), Char);
+                            CacheManager.addCharacter(rs.getInt("c.id_character"), Char);
                             break;
                         case "world":
                             Char.setMaterialWorld(rs.getString("re.name"));
-                            characters.put(rs.getInt("c.id_character"), Char);
+                            CacheManager.addCharacter(rs.getInt("c.id_character"), Char);
                             break;
                         case "flower":
                             Char.setFlower(rs.getString("re.name"));
-                            characters.put(rs.getInt("c.id_character"), Char);
+                            CacheManager.addCharacter(rs.getInt("c.id_character"), Char);
                             break;
                         default:
                             break;
@@ -57,6 +56,5 @@ public class CharacterRepository {
                 MySQLConnection.closeConnection(conn);
             }
         }
-        return characters;
     }
 }
