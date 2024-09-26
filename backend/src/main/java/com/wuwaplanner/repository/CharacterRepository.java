@@ -29,7 +29,7 @@ public class CharacterRepository {
                             CacheManager.addCharacter(rs.getInt("c.id_character"), Char);
                             break;
                         case "weakly boss":
-                            Char.setBoss(rs.getString("re.name"));
+                            Char.setWeaklyBoss(rs.getString("re.name"));
                             CacheManager.addCharacter(rs.getInt("c.id_character"), Char);
                             break;
                         case "farm":
