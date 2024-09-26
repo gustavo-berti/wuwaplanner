@@ -20,7 +20,6 @@ public class WeaponHandler implements HttpHandler {
         int id = Integer.parseInt(idStr);
         Weapon weapon = CacheManager.getWeapon(id);
         if (weapon != null) {
-            System.out.println("weapon found: " + weapon.getName());
             JsonObject jsonObject = new JsonObject();
             jsonObject.addProperty("id", id);
             jsonObject.addProperty("name", weapon.getName());

@@ -20,10 +20,15 @@ public class CharacterHandler implements HttpHandler {
         int id = Integer.parseInt(idStr);
         Character character = CacheManager.getCharacter(id);
         if (character != null) {
-            System.out.println("Character found: " + character.getName());
             JsonObject jsonObject = new JsonObject();
             jsonObject.addProperty("id", id);
             jsonObject.addProperty("name", character.getName());
+            jsonObject.addProperty("tier", character.getTier());
+            jsonObject.addProperty("boss", character.getBoss());
+            jsonObject.addProperty("weaklyBoss", character.getWeaklyBoss());
+            jsonObject.addProperty("flower", character.getFlower());
+            jsonObject.addProperty("materialFarm", character.getMaterialFarm());
+            jsonObject.addProperty("materialWorld", character.getMaterialWorld());
             String response = jsonObject.toString();
             exchange.getResponseHeaders().set("Content-Type", "application/json");
             exchange.sendResponseHeaders(200, response.getBytes().length);
