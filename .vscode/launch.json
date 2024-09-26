@@ -3,6 +3,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "SimpleHttpServer",
+            "request": "launch",
+            "mainClass": "com.wuwaplanner.controller.SimpleHttpServer",
+            "projectName": "backend"
+        },
+        {
+            "type": "java",
             "name": "Main",
             "request": "launch",
             "mainClass": "com.Main",

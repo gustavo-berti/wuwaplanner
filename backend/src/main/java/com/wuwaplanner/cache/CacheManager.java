@@ -1,8 +1,12 @@
 package com.wuwaplanner.cache;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+
 import com.wuwaplanner.model.Character;
 import com.wuwaplanner.model.Weapon;
+
+import java.util.List;
 
 public class CacheManager {
     private static HashMap<Integer, Character> characters = new HashMap<>();
@@ -46,6 +50,14 @@ public class CacheManager {
 
     public static void clearWeapon(){
         weapons.clear();
+    }
+
+    public static List<Character> getAllCharacters() {
+        return new ArrayList<>(characters.values());
+    }
+
+    public static List<Weapon> getAllWeapons() {
+        return new ArrayList<>(weapons.values());
     }
 
 }
