@@ -40,3 +40,28 @@
 .read-the-docs {
   color: #888;
 }
+
+.list{
+  display: block;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  padding: 0;
+  padding-top: 0.1em;
+  padding-bottom: 0.1em;
+  list-style: none;
+}
+
+.detail-list{
+  background-color: #301934;
+}
+
+.toolbar{
+  margin-top: -10em;
+  padding-top: 5%;
+}
+
+.close-button{
+  background-color: #301934;
+}

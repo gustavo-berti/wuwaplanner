@@ -1,0 +1,38 @@
+/* Modal.css */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modal {
+    background: #1a1a1a;
+    padding: 20px;
+    border-radius: 15px;
+    width: 80%;
+    max-width: 500px;
+    max-height: 80%; /* Set maximum height for the modal */
+    overflow: hidden;
+    overflow-y: auto; /* Enable vertical scrolling */
+    position: relative;
+  }
+  
+  .modal-close {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  
+  .modal-content {
+    margin-top: 20px;
+  }
