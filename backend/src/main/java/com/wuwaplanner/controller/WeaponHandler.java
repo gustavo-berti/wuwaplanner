@@ -23,6 +23,9 @@ public class WeaponHandler implements HttpHandler {
             JsonObject jsonObject = new JsonObject();
             jsonObject.addProperty("id", id);
             jsonObject.addProperty("name", weapon.getName());
+            jsonObject.addProperty("tier", weapon.getTier());
+            jsonObject.addProperty("materialFarm", weapon.getMaterialFarm());
+            jsonObject.addProperty("materialWorld", weapon.getMaterialWorld());
             String response = jsonObject.toString();
             exchange.getResponseHeaders().set("Content-Type", "application/json");
             exchange.sendResponseHeaders(200, response.getBytes().length);
